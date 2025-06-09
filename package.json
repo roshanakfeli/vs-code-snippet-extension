@@ -1,8 +1,10 @@
 {
-  "name": "Sanaap-Code-Snippets",
-  "displayName": "Sanaap Code Snippets",
-  "description": "Generate a standard React Query hook for Sanaap project.",
-  "version": "0.0.1",
+  "name": "Roshanak-Code-Snippets",
+  "icon": "icon.png",
+  "publisher": "RoshanakFeli",
+  "displayName": "Roshanak Code Snippets",
+  "description": "Generate a standard React Query hook.",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.100.0"
   },
@@ -14,18 +16,18 @@
   "contributes": {
     "commands": [
       {
-        "command": "Sanaap-Code-Snippets.helloWorld",
+        "command": "Roshanak-Code-Snippets.helloWorld",
         "title": "Hello World"
       }
     ],
     "snippets": [
       {
         "language": "typescriptreact",
-        "path": "./snippets/sanaap-snippets.code-snippets"
+        "path": "./snippets/roshanak-snippets.code-snippets"
       },
       {
         "language": "typescript",
-        "path": "./snippets/sanaap-snippets.code-snippets"
+        "path": "./snippets/roshanak-snippets.code-snippets"
       }
     ]
   },

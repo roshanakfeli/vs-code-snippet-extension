@@ -1,6 +1,6 @@
 {
-  "Sanaap React Query Hook": {
-    "prefix": ["rqhs", "useQuerySanaap"],
+  "React Query Hook": {
+    "prefix": ["rqh", "useQuerySnippet"],
     "body": [
       "import { APIs } from 'services/APIs';",
       "import { UseQueryOptions, useQuery } from '@tanstack/react-query';",
@@ -43,10 +43,10 @@
       "};",
       ""
     ],
-    "description": "Creates a standard React Query hook for Sanaap co."
+    "description": "Creates a standard React Query hook."
   },
-  "Sanaap React Mutation Hook": {
-    "prefix": ["rqms", "useMutationSanaap"],
+  "React Mutation Hook": {
+    "prefix": ["rqm", "useMutationSnippet"],
     "body": [
       "import { APIs } from 'services/APIs';",
       "import { UseMutationOptions, useMutation } from '@tanstack/react-query';",
@@ -71,6 +71,6 @@
       "};",
       ""
     ],
-    "description": "Creates a standard React Mutation hook for Sanaap co."
+    "description": "Creates a standard React Mutation hook."
   }
 }

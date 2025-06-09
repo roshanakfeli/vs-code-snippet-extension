@@ -1,6 +1,6 @@
-# Sanaap RQ Hooks
+# RQ Hooks
 
-A VS Code extension providing helpful code snippets for quickly generating standard React Query (`@tanstack/react-query`) custom hooks used in Sanaap projects. This helps maintain consistency and speeds up development.
+A VS Code extension providing helpful code snippets for quickly generating standard React Query (`@tanstack/react-query`) custom hooks. This helps maintain consistency and speeds up development.
 
 ## Features
 
@@ -11,45 +11,57 @@ This extension currently includes snippets for:
 
 ## How to Use
 
-1.  Ensure this extension ("Sanaap RQ Hooks") is installed in your VS Code.
-2.  Open a `.tsx` or `.ts` file where you want to create a new hook.
-3.  Type one of the **prefixes** listed below for the desired snippet.
-4.  VS Code's IntelliSense will suggest the snippet. Select it and press `Enter` or `Tab`.
-5.  The snippet code will be inserted.
-6.  Use the `Tab` key to jump between placeholders and fill in the required information for your specific hook.
+1. Ensure this extension ("RQ Hooks") is installed in your VS Code.
+2. Open a `.tsx` or `.ts` file where you want to create a new hook.
+3. Type one of the **prefixes** listed below for the desired snippet.
+4. VS Code's IntelliSense will suggest the snippet. Select it and press `Enter` or `Tab`.
+5. The snippet code will be inserted automatically.
+6. Use the `Tab` key to jump between placeholders and fill in the required values for your specific API.
 
 ## Available Snippets
 
-### 1. Sanaap React Query Hook (Detailed)
+| Name                | Prefixes                    | Description                                       |
+| ------------------- | --------------------------- | ------------------------------------------------- |
+| React Query Hook    | `rqh`, `useQuerySnippet`    | Generates a `useQuery` hook for data fetching.    |
+| React Mutation Hook | `rqm`, `useMutationSnippet` | Generates a `useMutation` hook for data mutation. |
 
-- **Prefixes:** `rqhs`, `useQuerySanaap`
-- **Description:** Creates a comprehensive `useQuery` hook structure for fetching data.
+---
+
+### 1. React Query Hook
+
+- **Prefixes:** `rqh`, `useQuerySnippet`
+- **Description:** Creates a comprehensive `useQuery` hook for fetching data from an API using standard structure.
 - **Placeholders to fill:**
-  - `HookIdentifier`: The base name for your hook (e.g., `AdminHospitalLog`).
-  - `FeatureNameParams`: The name of your Params type (e.g., `LogHospitalExpenseParams`).
-  - `FeatureNameResponse`: The name of your Response type (e.g., `HospitalLogExpenseResponse`).
-  - `QUERY_KEY_CONST`: The constant name for your React Query key (e.g., `ADMIN_HOSPITAL_EXPENSE_LOG`).
-  - `apiCategory`: The category under `APIs` (e.g., `common`, `expense`).
-  - `apiFunctionName`: The actual API function name (e.g., `getAdminHospitalExpenseLog`).
+  - `HookIdentifier`: Your custom hook’s base name (e.g., `AdminHospitalLog`)
+  - `FeatureNameParams`: The type for API parameters (e.g., `LogHospitalExpenseParams`)
+  - `FeatureNameResponse`: The type for the API response (e.g., `HospitalLogExpenseResponse`)
+  - `QUERY_KEY_CONST`: React Query cache key constant (e.g., `ADMIN_HOSPITAL_EXPENSE_LOG`)
+  - `apiCategory`: The API service category (e.g., `common`, `expense`)
+  - `apiFunctionName`: The actual API method name (e.g., `getAdminHospitalExpenseLog`)
 
-### 2. Sanaap React Mutation Hook
+---
 
-- **Prefixes:** `rqms`, `useMutationSanaap`
-- **Description:** Creates a standard `useMutation` hook structure for creating, updating, or deleting data.
+### 2. React Mutation Hook
+
+- **Prefixes:** `rqm`, `useMutationSnippet`
+- **Description:** Creates a reusable `useMutation` hook for submitting data via API (create/update/delete).
 - **Placeholders to fill:**
-  - `HookIdentifier`: The base name for your hook (e.g., `AddHospitalExpense`).
-  - `FeatureNameParams`: The name of your Params type (e.g., `AddHospitalExpenseParams`).
-  - `FeatureNameResponse`: The name of your Response type (e.g., `AddHospitalExpenseResponse`).
-  - `apiCategory`: The category under `APIs` (e.g., `hospital`, `common`).
-  - `apiFunctionName`: The actual API function name (e.g., `addHospitalExpense`).
+  - `HookIdentifier`: Your custom hook’s base name (e.g., `AddHospitalExpense`)
+  - `FeatureNameParams`: The type for API input params (e.g., `AddHospitalExpenseParams`)
+  - `FeatureNameResponse`: The type for API response (e.g., `AddHospitalExpenseResponse`)
+  - `apiCategory`: The API service category (e.g., `hospital`)
+  - `apiFunctionName`: The actual API method name (e.g., `addHospitalExpense`)
 
-## Important Notes & Configuration
+---
 
-**Verify Import Paths:**
+## Important Notes
 
-The snippets include default import paths like:
+### ✅ Verify Import Paths
 
-```typescript
+The snippets assume standard project folder structure. You may need to adjust paths to match your actual file organization:
+
+```ts
 import { APIs } from "services/APIs";
 import { APIError, ReactQuerySideEffectTypes } from "models/APImodels";
+import { FeatureNameParams, FeatureNameResponse } from "services/models";
 ```
